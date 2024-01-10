@@ -15,6 +15,10 @@
     <name>account.cmd</name>
     <description>Bank Account Command API Project</description>
 
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -53,6 +57,12 @@
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.techbank</groupId>
+            <artifactId>account.common</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
