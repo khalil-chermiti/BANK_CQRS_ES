@@ -12,10 +12,13 @@ import java.util.List;
 
 @Service
 public class AccountEventStore implements EventStore {
+    private final AccountEventProducer accountEventProducer;
 
     private final EventStoreRepository eventStoreRepository;
 
-    public AccountEventStore(EventStoreRepository eventStoreRepository) {
+    public AccountEventStore(AccountEventProducer accountEventProducer,
+                             EventStoreRepository eventStoreRepository) {
+        this.accountEventProducer = accountEventProducer;
         this.eventStoreRepository = eventStoreRepository;
     }
 
@@ -41,12 +44,11 @@ public class AccountEventStore implements EventStore {
                     .build()
             );
 
-            if (persistedEvent != null) {
+            if (!persistedEvent.getId().isEmpty()) {
                 // TODO : produce events to kafka
+                accountEventProducer.produce(event.getClass().getName(), event);
             }
-
         }
-
     }
 
     @Override
