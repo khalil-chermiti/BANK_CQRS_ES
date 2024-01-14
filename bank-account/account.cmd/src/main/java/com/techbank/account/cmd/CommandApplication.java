@@ -2,11 +2,11 @@ package com.techbank.account.cmd;
 
 import com.techbank.account.cmd.api.commands.*;
 import com.techbank.cqrs.core.infrastructure.CommandDispatcher;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.annotation.PostConstruct;
 
 @SpringBootApplication
 public class CommandApplication {
