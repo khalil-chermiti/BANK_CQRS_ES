@@ -9,6 +9,7 @@ spring:
       database: bankAccount
       username: root
       password: root
+      authentication-database: admin
   kafka:
     producer:
       bootstrap-servers: localhost:9092

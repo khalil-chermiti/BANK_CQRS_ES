@@ -15,6 +15,10 @@ public class AccountAggregate extends AggregateRoot {
     private boolean active;
     private double balance;
 
+    public boolean isActive() {
+        return active;
+    }
+
     public AccountAggregate(OpenAccountCommand openAccountCommand) {
         raiseEvent(AccountOpenedEvent
             .builder()

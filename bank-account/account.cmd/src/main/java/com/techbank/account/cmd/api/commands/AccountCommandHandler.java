@@ -38,4 +38,9 @@ public class AccountCommandHandler implements CommandHandler {
         account.closeAccount();
         eventSourcingHandler.save(account);
     }
+
+    @Override
+    public void handle(RestoreReadDbCommand command) {
+        eventSourcingHandler.republishEvents();
+    }
 }

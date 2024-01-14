@@ -45,8 +45,7 @@ public class AccountEventStore implements EventStore {
             );
 
             if (!persistedEvent.getId().isEmpty()) {
-                // TODO : produce events to kafka
-                accountEventProducer.produce(event.getClass().getName(), event);
+                accountEventProducer.produce(event.getClass().getSimpleName(), event);
             }
         }
     }
@@ -60,5 +59,17 @@ public class AccountEventStore implements EventStore {
         }
 
         return EventStream.stream().map(EventModel::getEventData).toList();
+    }
+
+    @Override
+    public List<String> getAggregateIds() {
+        var eventStream = eventStoreRepository.findAll();
+
+        if (eventStream.isEmpty())
+            throw new IllegalStateException("could not retrieve aggregate ids from event store");
+
+        return eventStream.stream()
+            .map(EventModel::getAggregateIdentifier)
+            .toList();
     }
 }
