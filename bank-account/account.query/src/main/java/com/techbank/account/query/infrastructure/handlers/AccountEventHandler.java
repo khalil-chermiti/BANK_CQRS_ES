@@ -19,7 +19,7 @@ public class AccountEventHandler implements EventHandler {
     public void on(AccountOpenedEvent event) {
         var bankAccount = BankAccount.builder()
             .id(event.getId())
-            .AccountHolder(event.getAccountHolder())
+            .accountHolder(event.getAccountHolder())
             .balance(event.getOpeningBalance())
             .accountType(event.getAccountType())
             .creationDate(event.getCreatedDate())

@@ -2,7 +2,7 @@ package com.techbank.account.cmd.api.controller;
 
 import com.techbank.account.cmd.api.commands.DepositFundsCommand;
 import com.techbank.account.common.dto.BaseResponse;
-import com.techbank.cqrs.core.command.CommandDispatcher;
+import com.techbank.cqrs.core.infrastructure.CommandDispatcher;
 import com.techbank.cqrs.core.exception.AggregateNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

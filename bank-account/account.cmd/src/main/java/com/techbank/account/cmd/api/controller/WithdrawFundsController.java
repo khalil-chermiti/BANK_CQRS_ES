@@ -1,9 +1,8 @@
 package com.techbank.account.cmd.api.controller;
 
-import com.techbank.account.cmd.api.commands.OpenAccountCommand;
 import com.techbank.account.cmd.api.commands.WithdrawFundsCommand;
 import com.techbank.account.cmd.api.dto.OpenAccountResponse;
-import com.techbank.cqrs.core.command.CommandDispatcher;
+import com.techbank.cqrs.core.infrastructure.CommandDispatcher;
 import com.techbank.cqrs.core.exception.AggregateNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.websocket.server.PathParam;
 
 
 @RestController

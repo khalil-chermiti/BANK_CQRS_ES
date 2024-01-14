@@ -1,7 +1,7 @@
 package com.techbank.account.cmd.infrastructure;
 
 import com.techbank.cqrs.core.command.BaseCommand;
-import com.techbank.cqrs.core.command.CommandDispatcher;
+import com.techbank.cqrs.core.infrastructure.CommandDispatcher;
 import com.techbank.cqrs.core.command.CommandHandlerMethod;
 import org.springframework.stereotype.Service;
 
